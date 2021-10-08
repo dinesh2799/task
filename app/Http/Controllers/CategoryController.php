@@ -8,13 +8,13 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $categories=Category::where('category_id',0)->get();
+        $categories=Category::all();
         return view('category.index',compact('categories'));
     }
 
     public function create()
     {
-        $categories=Category::where('category_id',0)->get();
+        $categories=Category::all();
         return view('category.create',compact('categories'));
     }
 
