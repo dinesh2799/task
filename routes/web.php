@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +29,6 @@ Route::get('admin/dashboard',[HomeController::class,'admindashboard'])->name('ad
 Route::get('categories',[CategoryController::class,'index'])->name('category.index')->middleware('is_admin');
 Route::get('create_category',[CategoryController::class,'create'])->name('category.create')->middleware('is_admin');
 Route::get('add_category',[CategoryController::class,'add_category'])->name('category.add_category')->middleware('is_admin');
+
+Route::get('create_product/{id}',[ProductController::class,'create'])->name('product.create')->middleware('is_admin');
+Route::get('add_product',[ProductController::class,'add_product'])->name('product.add_product')->middleware('is_admin');
