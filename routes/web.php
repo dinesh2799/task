@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +24,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //routes for task//
 
 Route::get('admin/dashboard',[HomeController::class,'admindashboard'])->name('admin.dashboard')->middleware('is_admin');
+
+Route::get('categories',[CategoryController::class,'index'])->name('category.index')->middleware('is_admin');
+Route::get('create_category',[CategoryController::class,'create'])->name('category.create')->middleware('is_admin');
+Route::get('add_category',[CategoryController::class,'add_category'])->name('category.add_category')->middleware('is_admin');

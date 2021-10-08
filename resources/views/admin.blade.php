@@ -16,6 +16,9 @@
 
                         {{ __('You are logged in!') }}
                     </div>
+                    <div>
+                        <a class="btn-primary" href="{{route('category.index')}}">Categories</a>
+                    </div>
                 </div>
             </div>
         </div>

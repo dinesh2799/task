@@ -20,6 +20,6 @@ class IsAdmin
         {
             return $next($request);
         }
-        return $next($request);
+        return redirect('home')->with('error',"Not Admin");
     }
 }
