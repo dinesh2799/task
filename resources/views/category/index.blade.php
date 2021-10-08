@@ -5,7 +5,10 @@
         <div class="row">
             <ul>
                 @foreach($categories as $category)
-                    <li>{{$category->name}}</li>
+                    <div class="row">
+                        <li>{{$category->name}}</li>
+                        <a class="btn-success" href="{{route('category.create')}}">Add Product</a>
+                    </div>
                     @if(count($category->sub_categories))
                         @include('category.subcategory',['subcategories'=>$category->sub_categories])
                     @endif
